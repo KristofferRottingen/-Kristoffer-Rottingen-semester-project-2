@@ -1,0 +1,41 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    .logo {
+
+        img{
+            max-width: 300px;
+        }
+    }
+} 
+
+.nav-links {
+        
+    ul {
+        display: inline-flex;
+        list-style: none;
+        width: 300px;
+        padding: 0;
+        justify-content: space-between;
+        padding-top: 23px;
+    }
+}
+
+.nav-links a {
+    color: $secondary-color;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    content: "";
+    display: block;
+    height: 4px;
+    background: $secondary-color;
+    transition: width 0.3s;
+}
+
+

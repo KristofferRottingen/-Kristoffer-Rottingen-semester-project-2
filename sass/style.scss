@@ -1,9 +1,4 @@
-body {
-    background-color: aqua;
-}
+@import "partials/nav";
+@import "partials/variables";
+@import "partials/base";
 
-.nav{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
