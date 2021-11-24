@@ -21,7 +21,7 @@ body {
 }
 
 .nav .logo img {
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .nav .nav-links ul {
@@ -114,5 +114,38 @@ body {
 .nav .nav-icons ul li:hover .dropdown ul li a:hover {
   text-decoration: underline;
   color: #ffffff;
+}
+
+.product-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-content h2 {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.product-content .line {
+  content: "";
+  width: 85%;
+  height: 4px;
+  background: #ffffff;
+  display: block;
+}
+
+.product-content .products-col {
+  padding-top: 30px;
 }
 /*# sourceMappingURL=style.css.map */

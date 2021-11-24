@@ -1,0 +1,24 @@
+.product-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        color: $secondary-color;
+        font-weight: 400;
+    }
+
+    .line{
+        content: "";
+        width: 85%;
+        height: 4px;
+        background: $secondary-color;
+        display: block;
+    }
+
+    .products-col{
+        padding-top: 30px;
+        display: grid;
+    }
+}
