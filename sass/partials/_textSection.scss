@@ -1,0 +1,24 @@
+.text-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    margin: 0 auto;
+    max-width: 135rem;
+
+    .left-content{
+        background-color: #ffffff;
+        padding: 20px 100px 30px 30px;
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+        line-height: 30px;
+    }
+
+    .right-content{
+        background-color: $third-color;
+        padding: 20px 30px 30px 100px;
+        line-height: 30px;
+        color: #ffffff;
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0px 100%);
+    }
+}

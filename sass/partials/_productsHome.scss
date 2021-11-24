@@ -17,8 +17,29 @@
         display: block;
     }
 
-    .products-col{
+    .products-container{
         padding-top: 30px;
         display: grid;
+        
+    }
+
+    .card{
+        background-color: #ffffff;
+        border-radius: 15px;
+        border: none;
+        width: 150px;
+        height: 200px;
+    }
+
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    
+    .col{
+        margin: 15px;
+        max-width: 250px;
     }
 }
