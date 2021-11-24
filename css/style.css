@@ -1,3 +1,9 @@
+body {
+  background-color: #264264;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,6 +15,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 5px 5px 0 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .nav .logo img {
@@ -25,27 +34,85 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 23px;
+  padding-top: 19px;
 }
 
 .nav .nav-links ul a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
 }
 
-.nav-links a::after {
+.nav .nav-links ul a::after {
   content: "";
   display: block;
   width: 0;
   height: 4px;
-  background: #fff;
+  background: #ffffff;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
 }
 
-body {
+.nav .nav-links ul a:hover::after {
+  width: 100%;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+
+.nav .nav-icons ul {
+  list-style: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100px;
+  padding-right: 20px;
+  padding-top: 13px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.nav .nav-icons ul li a {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.nav .nav-icons ul li i {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.nav .dropdown {
+  display: none;
+  width: 175px;
+}
+
+.nav .dropdown ul li a {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.nav .nav-icons ul li:hover .dropdown {
+  display: block;
+  position: absolute;
   background-color: #264264;
-  font-family: "Montserrat", sans-serif;
+  margin-left: -63px;
+  margin-top: 2px;
+}
+
+.nav .nav-icons ul li:hover .dropdown ul {
+  display: block;
+  margin: 10px;
+}
+
+.nav .nav-icons ul li:hover .dropdown ul li {
+  width: 100px;
+  padding: 10px;
+  text-align: left;
+}
+
+.nav .nav-icons ul li:hover .dropdown ul li a:hover {
+  text-decoration: underline;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
