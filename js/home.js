@@ -40,13 +40,19 @@ async function getproducts() {
 
             productCard.innerHTML += `<div class="col">
                 <div class="card">
-                    <img src="${productImage}" alt="${data[i].title}">
+                    <div class="card-image">
+                        
+                    </div>
                     <div class="product-text">
                         <h3 class="card-title">${data[i].title}</h3>
                         <p class="price">${data[i].price} kr</p>
                     </div>
                 </div>
             </div>`;
+
+            const cardImage = document.querySelector(".card-image");
+
+            cardImage.style.backgroundImage += `url("${productImage}")`;
         }
 
     } catch (error) {

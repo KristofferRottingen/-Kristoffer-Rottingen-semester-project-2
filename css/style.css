@@ -199,9 +199,16 @@ body {
           align-items: center;
 }
 
-.product-content .row .card img {
-  max-width: 300px;
-  max-height: 210px;
+.product-content .row .card .card-image {
+  height: 200px;
+  width: 300px;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .product-content .row .card .product-text {
