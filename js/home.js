@@ -1,7 +1,8 @@
 import { heroApi } from "./settings/api.js";
-import { peroductsApi } from "./settings/api.js";
+import { productsApi } from "./settings/api.js";
 
 const heroSection = document.querySelector(".hero-section");
+const productCard = document.querySelector(".row");
 
 async function getHeroImage() {
 
@@ -12,9 +13,9 @@ async function getHeroImage() {
 
         console.log(img);
 
-        heroSection.innerHTML += `<div class="hero-image">
-        <img src="${img.hero_banner.formats.large.name}" alt="${img.hero_banner_alt_text}">
-        </div>`;
+        const heroImage = "http://localhost:1337" + img.hero_banner.url;
+
+        heroSection.style.backgroundImage += `url("${heroImage}")`;
 
     } catch (error) {
         console.log(error);
@@ -22,3 +23,35 @@ async function getHeroImage() {
 }
 
 getHeroImage();
+
+// Get products from API
+
+async function getproducts() {
+
+    try {
+        const rep = await fetch(productsApi);
+
+        const data = await rep.json();
+
+        for (let i = 0; i < data.length; i++) {
+            // console.log(data[i].image.url)
+
+            const productImage = "http://localhost:1337" + data[i].image.url;
+
+            productCard.innerHTML += `<div class="col">
+                <div class="card">
+                    <img src="${productImage}" alt="${data[i].title}">
+                    <div class="product-text">
+                        <h3 class="card-title">${data[i].title}</h3>
+                        <p class="price">${data[i].price} kr</p>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getproducts();

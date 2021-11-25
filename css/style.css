@@ -130,11 +130,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .product-content h2 {
   color: #ffffff;
   font-weight: 400;
+  font-size: 30px;
 }
 
 .product-content .line {
@@ -145,18 +148,17 @@ body {
   display: block;
 }
 
-.product-content .products-container {
-  padding-top: 30px;
-  display: -ms-grid;
-  display: grid;
+.product-content a {
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
 }
 
-.product-content .card {
-  background-color: #ffffff;
-  border-radius: 15px;
-  border: none;
-  width: 150px;
-  height: 200px;
+.product-content a:hover {
+  text-shadow: 0 3px 6px black;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
 }
 
 .product-content .row {
@@ -171,9 +173,45 @@ body {
   padding-top: 30px;
 }
 
-.product-content .col {
+.product-content .row .col {
   margin: 15px;
   max-width: 250px;
+  padding: 30px;
+}
+
+.product-content .row .card {
+  background-color: #633F33;
+  border-radius: 15px;
+  border: none;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-content .row .card img {
+  max-width: 300px;
+  max-height: 210px;
+}
+
+.product-content .row .card .product-text {
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.product-content .row .card .product-text h3 {
+  font-size: 20px;
 }
 
 .text-section {
@@ -204,7 +242,7 @@ body {
 }
 
 .text-section .right-content {
-  background-color: #7F4F38;
+  background-color: #633F33;
   padding: 20px 30px 30px 100px;
   line-height: 30px;
   color: #ffffff;
@@ -231,5 +269,77 @@ body {
   width: 100%;
   padding: 0 20px;
   color: #ffffff;
+}
+
+.hero-section {
+  min-height: 60vh;
+  height: 100%;
+  width: auto;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero-section .hero-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+  background-color: #264264e5;
+}
+
+.hero-section .hero-content img {
+  max-width: 250px;
+}
+
+.hero-section .hero-content h1 {
+  color: #ffffff;
+  text-shadow: 0px 3px 6px black;
+}
+
+.hero-section .hero-content button {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #633F33;
+  color: #ffffff;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.hero-section .hero-content button:hover {
+  -webkit-box-shadow: 0px 3px 6px black;
+          box-shadow: 0px 3px 6px black;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  background-color: #ffffff;
+  color: #633F33;
 }
 /*# sourceMappingURL=style.css.map */
