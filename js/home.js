@@ -38,21 +38,18 @@ async function getproducts() {
 
             const productImage = "http://localhost:1337" + data[i].image.url;
 
-            productCard.innerHTML += `<div class="col">
-                <div class="card">
-                    <div class="card-image">
-                        
-                    </div>
-                    <div class="product-text">
-                        <h3 class="card-title">${data[i].title}</h3>
-                        <p class="price">${data[i].price} kr</p>
-                    </div>
-                </div>
-            </div>`;
+            console.log(productImage);
 
-            const cardImage = document.querySelector(".card-image");
-
-            cardImage.style.backgroundImage += `url("${productImage}")`;
+            productCard.innerHTML += `  <div class="col">
+                                            <div class="card">
+                                                <div class="card-image" style="background-image: url('${productImage}')";>
+                                                </div>
+                                                <div class="product-text">
+                                                    <h3 class="card-title">${data[i].title}</h3>
+                                                    <p class="price">${data[i].price} kr</p>
+                                                </div>
+                                            </div>
+                                        </div>`;
         }
 
     } catch (error) {

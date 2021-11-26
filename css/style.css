@@ -65,7 +65,7 @@ body {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100px;
-  padding-right: 20px;
+  padding-right: 19px;
   padding-top: 13px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -140,6 +140,11 @@ body {
   font-size: 30px;
 }
 
+.product-content h1 {
+  color: #ffffff;
+  font-weight: 400;
+}
+
 .product-content .line {
   content: "";
   width: 85%;
@@ -174,9 +179,7 @@ body {
 }
 
 .product-content .row .col {
-  margin: 15px;
-  max-width: 250px;
-  padding: 30px;
+  margin: 25px;
 }
 
 .product-content .row .card {

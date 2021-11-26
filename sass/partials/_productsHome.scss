@@ -12,6 +12,11 @@
         font-size: 30px;
     }
 
+    h1{
+        color: $secondary-color;
+        font-weight: 400;
+    }
+
     .line{
         content: "";
         width: 85%;
@@ -39,9 +44,7 @@
         padding-top: 30px;
 
         .col{
-            margin: 15px;
-            max-width: 250px;
-            padding: 30px;
+            margin: 25px;
         }
 
         .card{
