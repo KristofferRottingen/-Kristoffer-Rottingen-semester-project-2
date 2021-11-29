@@ -85,8 +85,16 @@
             
             li {
 
-                a {
+                p{
                     font-size: 16px;
+                    color: $secondary-color;
+                    text-align: center;
+                    margin-left: -50px;
+                    font-weight: 600;
+                }
+
+                a {
+                    font-size: 14px;
                     text-decoration: none;
                 }
             }

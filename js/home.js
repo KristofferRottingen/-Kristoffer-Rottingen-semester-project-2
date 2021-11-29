@@ -1,8 +1,11 @@
 import { heroApi } from "./settings/api.js";
 import { productsApi } from "./settings/api.js";
+import declearLoggedIn from "./utils/loggedIn.js";
 
 const heroSection = document.querySelector(".hero-section");
 const productCard = document.querySelector(".row");
+
+declearLoggedIn();
 
 async function getHeroImage() {
 
@@ -10,8 +13,6 @@ async function getHeroImage() {
         const rep = await fetch(heroApi);
 
         const img = await rep.json();
-
-        console.log(img);
 
         const heroImage = "http://localhost:1337" + img.hero_banner.url;
 
@@ -37,8 +38,6 @@ async function getproducts() {
             // console.log(data[i].image.url)
 
             const productImage = "http://localhost:1337" + data[i].image.url;
-
-            console.log(productImage);
 
             productCard.innerHTML += `  <div class="col">
                                             <div class="card">
