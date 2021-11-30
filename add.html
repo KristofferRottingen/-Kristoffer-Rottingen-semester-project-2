@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="add-container">
+
+        <form class="add-form">
+            <div class="add-content">
+                <h1>Add products</h1>
+
+                <div class="message-container"></div>
+
+                <div>
+                    <label for="title">Title</label>
+                    <input id="title">
+                </div>
+
+                <div>
+                    <label for="price">Price</label>
+                    <input id="price">
+                </div>
+
+                <div>
+                    <label for="description">Description</label>
+                    <textarea id="description"></textarea>
+                </div>
+
+                <div>
+                    <label for="image-url">Image Url</label>
+                    <label class="img-url-placeholder">http://localhost:1337/uploads/ :</label>
+                    <textarea id="image-url"></textarea>
+                </div>
+                <button>Add</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/add.js" type="module"></script>
+</body>
+
+</html>

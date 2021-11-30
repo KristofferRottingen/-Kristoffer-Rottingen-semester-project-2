@@ -1,0 +1,76 @@
+.add-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+
+    .add-form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 60px;
+        margin-top: 250px;
+        color: $secondary-color;
+        width: 500px;
+        background-color: rgba(0, 0, 0, 0.644);
+
+        .add-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            width: 100%;
+            
+            
+            h1{
+                font-weight: 400;
+            }
+    
+    
+            div{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+                max-width: 300px;
+                width: 100%;
+    
+    
+                input{
+                    border: none;
+                    padding: 10px 5px;
+                }
+            }
+
+            .img-url-placeholder{
+                font-style: italic;
+                font-size: 14px;
+                margin-top: 5px;
+            }
+    
+            button{
+                max-width: 150px;
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px 25px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                background-color: $third-color;
+                color: $secondary-color;
+                transition: all 0.3 ease;
+                cursor: pointer;
+            }
+    
+            button:hover{
+                box-shadow: 0px 3px 6px black;
+                transition: all 0.3 ease;
+                background-color: $secondary-color;
+                color: $third-color;
+            }
+        }
+    }
+
+    
+}
+
