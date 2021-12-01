@@ -21,6 +21,7 @@ export default function declearLoggedIn() {
         loggedIn.innerHTML = `<ul>
                                 <li>
                                     <p>Hello ${username}</p>
+                                    <a href="add.html">Add product</a>
                                     <a href="login.html">Log in</a>
                                 </li>
                             </ul>`;

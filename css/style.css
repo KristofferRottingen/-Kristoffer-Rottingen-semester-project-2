@@ -82,22 +82,25 @@ body {
   color: #ffffff;
 }
 
-.nav .dropdown {
+.nav .nav-icons .dropdown {
   display: none;
   width: 175px;
 }
 
-.nav .dropdown ul li p {
+.nav .nav-icons .dropdown ul li p {
   font-size: 16px;
   color: #ffffff;
   text-align: center;
-  margin-left: -50px;
+  margin-left: -35px;
+  margin-bottom: 5px;
   font-weight: 600;
 }
 
-.nav .dropdown ul li a {
+.nav .nav-icons .dropdown ul li a {
   font-size: 14px;
   text-decoration: none;
+  margin-left: -35px;
+  margin-bottom: 5px;
 }
 
 .nav .nav-icons ul li:hover .dropdown {
@@ -117,6 +120,19 @@ body {
   width: 100px;
   padding: 10px;
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .nav .nav-icons ul li:hover .dropdown ul li a:hover {
