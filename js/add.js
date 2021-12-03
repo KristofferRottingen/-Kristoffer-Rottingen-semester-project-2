@@ -1,6 +1,4 @@
 import messageDispaly from "./components/messageDisplay.js";
-import { getToken } from "./utils/storage.js";
-import { apiUrl } from "./settings/api.js";
 import { productsApi } from "./settings/api.js";
 
 
@@ -9,7 +7,7 @@ const message = document.querySelector(".message-container");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
-const imageUrl = document.querySelector("#image-url");
+const imageFile = document.querySelector("#file-field");
 
 form.addEventListener("submit", formSubmit)
 
@@ -21,28 +19,35 @@ function formSubmit(event) {
     const titleValue = title.value.trim();
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
-    const imageUrlValue = imageUrl.value.trim();
+    const imageValue = "http://localhost:1337/uploads/" + imageFile.files[0].name;
 
-    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageUrlValue.length === 0) {
+    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
         return messageDispaly("warning", " Please insert right values", ".message-container");
     }
 
-    productsAdd(titleValue, priceValue, descriptionValue, imageUrlValue);
+    productsAdd(titleValue, priceValue, descriptionValue, imageValue);
 
 }
 
-async function productsAdd(title, price, description, imageUrl) {
+async function productsAdd(title, price, description, image_url) {
 
-    const dataNeeded = JSON.stringify({ title: title, price: price, description: description, image_url: imageUrl });
+    const dataNeeded = JSON.stringify({
+        title: title, price: price, description: description, image_url: image_url
+    });
 
-    const token = getToken();
+    const keyToToken = "token";
+
+    const token = localStorage.getItem(keyToToken);
+
+    const fixedToken = JSON.parse(token);
+
 
     const optionsMethod = {
         method: "POST",
         body: dataNeeded,
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${fixedToken}`,
         },
     };
 
@@ -50,7 +55,15 @@ async function productsAdd(title, price, description, imageUrl) {
         const resp = await fetch(productsApi, optionsMethod);
         const json = await resp.json();
 
-        console.log(resp);
+        if (json.updated_at) {
+            messageDispaly("success", "The product is added", ".message-container");
+
+            form.reset();
+        } else {
+            messageDispaly("error", "You do not access to this!", ".message-container");
+        }
+
+        console.log(json);
 
     } catch (error) {
         console.log(error);

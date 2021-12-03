@@ -10,7 +10,7 @@
         align-items: center;
         flex-direction: column;
         padding: 60px;
-        margin-top: 250px;
+        margin: 50px 0px;
         color: $secondary-color;
         width: 500px;
         background-color: rgba(0, 0, 0, 0.644);
@@ -67,6 +67,21 @@
                 transition: all 0.3 ease;
                 background-color: $secondary-color;
                 color: $third-color;
+            }
+
+            a{
+                text-decoration: none;
+                margin-top: 20px;
+                padding: 10px 5px;
+                background-color: $secondary-color;
+                color: $third-color;
+                transition: 0.3s all ease;
+            }
+
+            a:hover{
+                background-color: $third-color;
+                color: $secondary-color;
+                transition: 0.3s all ease;
             }
         }
     }

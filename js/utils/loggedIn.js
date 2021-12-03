@@ -22,9 +22,17 @@ export default function declearLoggedIn() {
                                 <li>
                                     <p>Hello ${username}</p>
                                     <a href="add.html">Add product</a>
-                                    <a href="login.html">Log in</a>
+                                    <a class="log-out" href="index.html">Log out</a>
                                 </li>
                             </ul>`;
-    }
 
+
+        const logOut = document.querySelector(".log-out");
+
+        logOut.addEventListener("click", clearStorage);
+
+        function clearStorage() {
+            localStorage.clear();
+        }
+    }
 }

@@ -5,6 +5,7 @@ import declearLoggedIn from "./utils/loggedIn.js";
 const heroSection = document.querySelector(".hero-section");
 const productCard = document.querySelector(".row");
 
+
 declearLoggedIn();
 
 async function getHeroImage() {
@@ -29,17 +30,27 @@ getHeroImage();
 
 async function getproducts() {
 
+
+
     try {
         const rep = await fetch(productsApi);
 
         const data = await rep.json();
 
+        console.log(data);
+
+
+
         for (let i = 0; i < data.length; i++) {
-            // console.log(data[i].image.url)
 
-            const productImage = "http://localhost:1337" + data[i].image.url;
+            console.log(data[i].featured);
 
-            productCard.innerHTML += `  <div class="col">
+            // How to ingor that data[i].image === null
+
+            if (data[i].image) {
+                const productImage = "http://localhost:1337" + data[i].image.url
+
+                productCard.innerHTML += `  <div class="col">
                                             <div class="card">
                                                 <div class="card-image" style="background-image: url('${productImage}')";>
                                                 </div>
@@ -49,6 +60,32 @@ async function getproducts() {
                                                 </div>
                                             </div>
                                         </div>`;
+            } else {
+                const productImage = data[i].image_url
+
+                productCard.innerHTML += `  <div class="col">
+                                            <div class="card">
+                                                <div class="card-image" style="background-image: url('${productImage}')";>
+                                                </div>
+                                                <div class="product-text">
+                                                    <h3 class="card-title">${data[i].title}</h3>
+                                                    <p class="price">${data[i].price} kr</p>
+                                                </div>
+                                            </div>
+                                        </div>`;
+            }
+
+            // featured or not
+
+            if (data[i].featured === false) {
+
+                const col = document.querySelector(".col");
+
+                col.style.display = "none";
+            }
+
+
+
         }
 
     } catch (error) {
