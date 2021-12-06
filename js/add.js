@@ -34,12 +34,8 @@ async function productsAdd(title, price, description, image) {
 
     const formData = new FormData();
     formData.append("files.image", image, image.name)
-    const data = JSON.stringify({
-        title: title, price: price, description: description, image: image
-    });
+    const data = JSON.stringify({ title: title, price: price, description: description, });
     formData.append("data", data);
-
-
     const keyToToken = "token";
 
     const token = localStorage.getItem(keyToToken);
@@ -51,10 +47,11 @@ async function productsAdd(title, price, description, image) {
         method: "POST",
         body: formData,
         headers: {
-            "Content-Type": "application/json",
             Authorization: `Bearer ${fixedToken}`,
         },
     };
+
+
 
     try {
         const resp = await fetch(productsApi, optionsMethod);
@@ -65,7 +62,7 @@ async function productsAdd(title, price, description, image) {
 
             form.reset();
         } else {
-            messageDispaly("error", "You do not access to this!", ".message-container");
+            messageDispaly("error", json.message, ".message-container");
         }
 
         console.log(json);
