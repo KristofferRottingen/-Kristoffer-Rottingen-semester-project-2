@@ -19,7 +19,8 @@ function formSubmit(event) {
     const titleValue = title.value.trim();
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
-    const imageValue = "http://localhost:1337/uploads/" + imageFile.files[0].name;
+    const imageValue = imageFile.files[0];
+    console.log(imageValue);
 
     if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
         return messageDispaly("warning", " Please insert right values", ".message-container");
@@ -29,11 +30,15 @@ function formSubmit(event) {
 
 }
 
-async function productsAdd(title, price, description, image_url) {
+async function productsAdd(title, price, description, image) {
 
-    const dataNeeded = JSON.stringify({
-        title: title, price: price, description: description, image_url: image_url
+    const formData = new FormData();
+    formData.append("files.image", image, image.name)
+    const data = JSON.stringify({
+        title: title, price: price, description: description, image: image
     });
+    formData.append("data", data);
+
 
     const keyToToken = "token";
 
@@ -44,7 +49,7 @@ async function productsAdd(title, price, description, image_url) {
 
     const optionsMethod = {
         method: "POST",
-        body: dataNeeded,
+        body: formData,
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${fixedToken}`,
