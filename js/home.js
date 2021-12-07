@@ -1,12 +1,13 @@
 import { heroApi } from "./settings/api.js";
 import { productsApi } from "./settings/api.js";
 import declearLoggedIn from "./utils/loggedIn.js";
+import { getUsername } from "./utils/storage.js";
+
+declearLoggedIn();
 
 const heroSection = document.querySelector(".hero-section");
 const productCard = document.querySelector(".row");
 
-
-declearLoggedIn();
 
 async function getHeroImage() {
 
@@ -28,6 +29,10 @@ getHeroImage();
 
 // Get products from API
 
+const username = getUsername();
+
+console.log(username);
+
 async function getproducts() {
 
 
@@ -40,53 +45,32 @@ async function getproducts() {
         console.log(data);
 
 
-
         for (let i = 0; i < data.length; i++) {
 
-            console.log(data[i].featured);
+            const productImage = "http://localhost:1337" + data[i].image.url
 
-            // How to ingor that data[i].image === null
-
-            if (data[i].image) {
-                const productImage = "http://localhost:1337" + data[i].image.url
-
-                productCard.innerHTML += `  <div class="col">
+            productCard.innerHTML += `  <div class="col">
                                             <div class="card">
                                                 <div class="card-image" style="background-image: url('${productImage}')";>
                                                 </div>
                                                 <div class="product-text">
+                                                    <div class="product-icons">
+                                                        <a class="edit" style="display: none;" href="edit.html"><i class="fas fa-edit"></i></a>
+                                                        <a href="#"><i class="far fa-heart"></i></a>
+                                                    </div>
                                                     <h3 class="card-title">${data[i].title}</h3>
                                                     <p class="price">${data[i].price} kr</p>
                                                 </div>
                                             </div>
                                         </div>`;
-            } else {
-                const productImage = data[i].image_url
-
-                productCard.innerHTML += `  <div class="col">
-                                            <div class="card">
-                                                <div class="card-image" style="background-image: url('${productImage}')";>
-                                                </div>
-                                                <div class="product-text">
-                                                    <h3 class="card-title">${data[i].title}</h3>
-                                                    <p class="price">${data[i].price} kr</p>
-                                                </div>
-                                            </div>
-                                        </div>`;
-            }
-
-            // featured or not
-
-            if (data[i].featured === false) {
-
-                const col = document.querySelector(".col");
-
-                col.style.display = "none";
-            }
-
-
-
         }
+
+        if (username) {
+            const editProduct = document.querySelectorAll(".edit");
+
+            editProduct.style.display = "block";
+        }
+
 
     } catch (error) {
         console.log(error);
@@ -94,3 +78,5 @@ async function getproducts() {
 }
 
 getproducts();
+
+

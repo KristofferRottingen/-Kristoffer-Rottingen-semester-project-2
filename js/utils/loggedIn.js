@@ -6,12 +6,8 @@ export default function declearLoggedIn() {
 
     const username = getUsername();
 
-    console.log(username);
-
     const loggedIn = document.querySelector(".dropdown");
     const userIcon = document.querySelector(".nav .nav-icons ul li .fa-user-circle");
-
-    console.log(userIcon);
 
     if (username) {
 
@@ -19,7 +15,7 @@ export default function declearLoggedIn() {
 
 
         loggedIn.innerHTML = `<ul>
-                                <li>
+                                <li> 
                                     <p>Hello ${username}</p>
                                     <a href="add.html">Add product</a>
                                     <a class="log-out" href="index.html">Log out</a>
