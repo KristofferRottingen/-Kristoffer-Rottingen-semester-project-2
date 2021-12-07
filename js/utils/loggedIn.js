@@ -28,7 +28,7 @@ export default function declearLoggedIn() {
         logOut.addEventListener("click", clearStorage);
 
         function clearStorage() {
-            localStorage.clear();
+            localStorage.clear("token");
         }
     }
 }

@@ -54,12 +54,12 @@ async function getproducts() {
                                                 <div class="card-image" style="background-image: url('${productImage}')";>
                                                 </div>
                                                 <div class="product-text">
-                                                    <div class="product-icons">
-                                                        <a class="edit" style="display: none;" href="edit.html"><i class="fas fa-edit"></i></a>
-                                                        <a href="#"><i class="far fa-heart"></i></a>
+                                                    <div class="product-icon">
+                                                        <a class="edit" style="display: none;" href="edit.html?id=${data[i].id}"><i class="fas fa-edit"></i></a>
                                                     </div>
                                                     <h3 class="card-title">${data[i].title}</h3>
                                                     <p class="price">${data[i].price} kr</p>
+                                                    <a href="details.html?id=${data[i].id}" ><button>View Product</button></a>
                                                 </div>
                                             </div>
                                         </div>`;
@@ -68,8 +68,14 @@ async function getproducts() {
         if (username) {
             const editProduct = document.querySelectorAll(".edit");
 
-            editProduct.style.display = "block";
+            for (let i = 0; i < editProduct.length; i++) {
+
+                const edit = editProduct[i];
+
+                edit.style.display = "block";
+            }
         }
+
 
 
     } catch (error) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/65aaf5acf6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="edit-container">
+
+        <form class="edit-form">
+            <div class="edit-content">
+                <h1>Edit products</h1>
+
+                <div class="message-container"></div>
+
+                <input id="id" />
+
+                <div>
+                    <label for="title">Title</label>
+                    <input id="title">
+                </div>
+
+                <div>
+                    <label for="price">Price</label>
+                    <input id="price">
+                </div>
+
+                <div>
+                    <label for="description">Description</label>
+                    <textarea id="description"></textarea>
+                </div>
+
+                <div>
+                    <label for="image-url">Upload image</label>
+                    <input type="file" id="file-field" name="file-field" accept="image/png, image/jpeg">
+                </div>
+                <button>Save</button>
+                <a href="index.html">Homepage</a>
+            </div>
+        </form>
+    </div>
+    <script src="js/edit.js" type="module"></script>
+</body>
+
+</html>

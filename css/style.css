@@ -260,7 +260,7 @@ body {
           justify-content: center;
 }
 
-.product-content .row .card .product-text .product-icons {
+.product-content .row .card .product-text .product-icon {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -270,11 +270,10 @@ body {
   display: flex;
 }
 
-.product-content .row .card .product-text .product-icons a {
+.product-content .row .card .product-text .product-icon a {
   color: #ffffff;
   font-size: 25px;
   text-decoration: none;
-  gap: 10px;
 }
 
 .product-content .row .card .product-text h3 {
@@ -610,6 +609,127 @@ body {
 }
 
 .add-container .add-form .add-content a:hover {
+  background-color: #633F33;
+  color: #ffffff;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.edit-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.edit-container .edit-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 60px;
+  margin: 50px 0px;
+  color: #ffffff;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.644);
+}
+
+.edit-container .edit-form .edit-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+.edit-container .edit-form .edit-content #id {
+  width: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.edit-container .edit-form .edit-content h1 {
+  font-weight: 400;
+}
+
+.edit-container .edit-form .edit-content div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.edit-container .edit-form .edit-content div input {
+  border: none;
+  padding: 10px 5px;
+}
+
+.edit-container .edit-form .edit-content .img-url-placeholder {
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.edit-container .edit-form .edit-content button {
+  max-width: 150px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #633F33;
+  color: #ffffff;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.edit-container .edit-form .edit-content button:hover {
+  -webkit-box-shadow: 0px 3px 6px black;
+          box-shadow: 0px 3px 6px black;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  background-color: #ffffff;
+  color: #633F33;
+}
+
+.edit-container .edit-form .edit-content a {
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px 5px;
+  background-color: #ffffff;
+  color: #633F33;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.edit-container .edit-form .edit-content a:hover {
   background-color: #633F33;
   color: #ffffff;
   -webkit-transition: 0.3s all ease;
