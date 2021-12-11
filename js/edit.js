@@ -17,6 +17,7 @@ const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const imageFile = document.querySelector("#file-field");
+const currentImg = document.querySelector(".current-img-div");
 
 async function getProductDate() {
 
@@ -24,13 +25,18 @@ async function getProductDate() {
         const resp = await fetch(urlEdit);
         const productInfo = await resp.json();
 
+        const productImage = "http://localhost:1337" + productInfo.image.url
+
+        currentImg.innerHTML += `<label for="image">Current image</label>
+                                <div class="current-img" style="background-img: ${productImage}></div>`;
+
         console.log(productInfo);
 
         idInput.value = productInfo.id;
         title.value = productInfo.title;
         price.value = productInfo.price;
         description.value = productInfo.description;
-        // missing img property
+        // missing img property 
 
 
 
@@ -62,12 +68,9 @@ function formSubmit(event) {
 }
 
 
-async function productEditUpdate(id, title, price, description, image) {
+async function productEditUpdate(id, title, price, description) {
 
-    const formData = new FormData();
-    formData.append("files.image", image, image.name)
     const data = JSON.stringify({ id: id, title: title, price: price, description: description, });
-    formData.append("data", data);
 
     const keyToToken = "token";
 
@@ -78,7 +81,7 @@ async function productEditUpdate(id, title, price, description, image) {
 
     const optionsMethod = {
         method: "PUT",
-        body: formData,
+        body: data,
         headers: {
             Authorization: `Bearer ${fixedToken}`,
         },

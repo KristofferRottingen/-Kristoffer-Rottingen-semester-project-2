@@ -47,6 +47,10 @@ async function getproducts() {
 
         for (let i = 0; i < data.length; i++) {
 
+            if(i === 4){
+                break;
+            };
+
             const productImage = "http://localhost:1337" + data[i].image.url
 
             productCard.innerHTML += `  <div class="col">

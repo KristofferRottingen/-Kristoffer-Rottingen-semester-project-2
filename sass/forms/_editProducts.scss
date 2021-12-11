@@ -48,10 +48,19 @@
                 }
             }
 
-            .img-url-placeholder{
-                font-style: italic;
-                font-size: 14px;
-                margin-top: 5px;
+            .current-img-div{
+                width: 200px;
+                height: 200px;
+            }
+
+            .current-img{
+                height: 200px;
+                width: 300px;
+                padding: 0;
+                justify-content: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
             }
     
             button{
