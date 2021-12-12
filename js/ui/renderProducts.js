@@ -1,6 +1,11 @@
+import { getUsername } from "../utils/storage.js";
+
 export function renderProducts(productsToRender) {
     const productsContainer = document.querySelector(".row");
     productsContainer.innerHTML = "";
+
+
+    const username = getUsername();
 
     productsToRender.forEach(function (product) {
         const productImage = "http://localhost:1337" + product.image.url
@@ -19,4 +24,15 @@ export function renderProducts(productsToRender) {
                                             </div>
                                         </div>`;
     });
+
+    if (username) {
+        const editProduct = document.querySelectorAll(".edit");
+
+        for (let i = 0; i < editProduct.length; i++) {
+
+            const edit = editProduct[i];
+
+            edit.style.display = "block";
+        }
+    }
 }
