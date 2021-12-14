@@ -4,6 +4,13 @@ body {
   margin: 0;
 }
 
+.current::after {
+  content: '';
+  width: 100%;
+  background: #ffffff;
+  height: 4px;
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
