@@ -1,0 +1,26 @@
+// Message notifications
+
+.success {
+	background-color: green;
+	padding: 15px;
+	color: white;
+}
+
+.warning {
+	background-color: yellow;
+	padding: 15px;
+	color: black;
+}
+
+.error {
+	background-color: red;
+	padding: 15px;
+	color: black;
+}
+
+.message {
+	background-color: transparent;
+	padding: 15px;
+	color: $primary-color;
+	text-align: center;
+}

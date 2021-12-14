@@ -14,6 +14,8 @@ async function getProducts() {
     try {
         const resp = await fetch(productsApi);
         const json = await resp.json();
+
+        console.log(json);
         
         renderProducts(json);
         searchProducts(json);
