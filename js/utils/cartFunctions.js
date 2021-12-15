@@ -3,7 +3,8 @@ export function getExistingProduct() {
     const cart = localStorage.getItem("cart");
 
     if(cart === null){
-        return [];
+        return []
+        
     } else {
         return JSON.parse(cart);
     }
