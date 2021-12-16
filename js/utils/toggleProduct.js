@@ -5,7 +5,7 @@ export function toggleProduct() {
 
     detailsButton.addEventListener("click", handleClick);
 
-    function handleClick(event) {
+    function handleClick() {
 
         const id = this.dataset.id;
         const title = this.dataset.title;
