@@ -13,18 +13,19 @@ const cartContent = document.querySelector(".cart-content");
 
 message.innerHTML += "";
 
+if(products.length === 0){
+    messageDisplay("notification", "You have no products added to the cart", ".message-container");
+}
+
 
 products.forEach(product => {
     cartContent.innerHTML += `<div class="cart-info">
                                 <a href="details.html?id=${product.id}"><img src="${product.image}" alt="img"></a>
                                 <a href="details.html?id=${product.id}"><p>${product.title}</p></a>
-                                <p>${product.price} kr</p>
+                                <p class="price">${product.price} kr</p>
                                 <button><i data-id="${product.id}" class="fas fa-backspace atc-button"></i></button>
                               </div>`;
 });
 
 toggleProduct();
 
-if (detailsButton === null) {
-    messageDisplay("message", " You have no products in the cart", ".message-container");
-};

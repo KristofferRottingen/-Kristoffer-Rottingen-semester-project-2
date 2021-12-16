@@ -47,7 +47,7 @@ body {
 }
 
 .nav .nav-links ul a::after {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 4px;
@@ -81,6 +81,7 @@ body {
 }
 
 .nav .nav-icons ul li i {
+  padding-right: 10px;
   font-size: 30px;
   color: #ffffff;
 }
@@ -698,12 +699,7 @@ body {
   padding: 10px 5px;
 }
 
-.edit-container .edit-form .edit-content .current-img-div {
-  width: 200px;
-  height: 200px;
-}
-
-.edit-container .edit-form .edit-content .current-img {
+.edit-container .edit-form .edit-content .current-img-div .current-img {
   height: 200px;
   width: 300px;
   padding: 0;
@@ -850,6 +846,13 @@ body {
   color: #633F33;
 }
 
+.details-container .details-content .info-section .info-content .note {
+  background-color: #ffffff;
+  color: #264264;
+  text-align: center;
+  padding: 10px;
+}
+
 .cart-container {
   padding: 40px;
   color: #264264;
@@ -982,9 +985,9 @@ body {
   color: black;
 }
 
-.message {
+.notification {
   background-color: transparent;
-  padding: 15px;
+  padding: 35px;
   color: #264264;
   text-align: center;
 }

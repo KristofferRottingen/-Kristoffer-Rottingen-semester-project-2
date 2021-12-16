@@ -1,142 +1,127 @@
 .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px 5px 0 5px;
-    box-sizing: border-box;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5px 5px 0 5px;
+	box-sizing: border-box;
+	align-items: center;
 
-    // Loog --->
-    .logo {
+	// Loog --->
+	.logo {
+		img {
+			max-width: 250px;
+		}
+	}
 
-        img{
-            max-width: 250px;
-        }
-    }
+	// Navigation Links --->
+	.nav-links {
+		ul {
+			display: inline-flex;
+			list-style: none;
+			width: 300px;
+			padding: 0;
+			justify-content: space-between;
+			padding-top: 19px;
 
-    // Navigation Links --->
-    .nav-links {
-        
-        ul {
-            display: inline-flex;
-            list-style: none;
-            width: 300px;
-            padding: 0;
-            justify-content: space-between;
-            padding-top: 19px;
+			a {
+				color: $secondary-color;
+				text-decoration: none;
+				cursor: pointer;
+			}
 
-            a {
-                color: $secondary-color;
-                text-decoration: none;
-                cursor: pointer;
-            }
+			a::after {
+				content: '';
+				display: block;
+				width: 0;
+				height: 4px;
+				background: $secondary-color;
+				transition: width 0.3s;
+			}
 
-            a::after {
-                content: "";
-                display: block;
-                width: 0;
-                height: 4px;
-                background: $secondary-color;
-                transition: width 0.3s;
-            }
+			a:hover::after {
+				width: 100%;
+				transition: width 0.3s;
+			}
+		}
+	}
 
-            a:hover::after{
-                width: 100%;
-                transition: width 0.3s;
-            }
-        }
-        
-    }
+	// Icons ---->
+	.nav-icons {
+		ul {
+			list-style: none;
+			display: inline-flex;
+			width: 100px;
+			padding-right: 19px;
+			padding-top: 13px;
+			justify-content: space-evenly;
 
+			li {
+				a {
+					font-size: 30px;
+					color: $secondary-color;
+				}
 
-    // Icons ---->
-    .nav-icons {
-        
-        ul {
-            list-style: none;
-            display: inline-flex;
-            width: 100px;
-            padding-right: 19px;
-            padding-top: 13px;
-            justify-content: space-evenly;
+				i {
+					padding-right: 10px;
+					font-size: 30px;
+					color: $secondary-color;
+				}
+			}
+		}
 
-            li {
-                a {
-                    font-size: 30px;
-                    color: $secondary-color;
-                }
+		// Log inn dropdown --->
 
-                i {
-                    font-size: 30px;
-                    color: $secondary-color;
-                }
+		.dropdown {
+			display: none;
+			width: 175px;
 
-            }   
-        }
+			ul {
+				li {
+					p {
+						font-size: 16px;
+						color: $secondary-color;
+						text-align: center;
+						margin-left: -35px;
+						margin-bottom: 5px;
+						font-weight: 600;
+					}
 
-        // Log inn dropdown --->
+					a {
+						font-size: 14px;
+						text-decoration: none;
+						margin-left: -35px;
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+	}
 
-        .dropdown{
-            display: none;
-            width: 175px;
+	.nav-icons ul li:hover .dropdown {
+		display: block;
+		position: absolute;
+		background-color: $primary-color;
+		margin-left: -63px;
+		margin-top: 2px;
 
-            ul{
-                li{
-                    p{
-                        font-size: 16px;
-                        color: $secondary-color;
-                        text-align: center;
-                        margin-left: -35px;
-                        margin-bottom: 5px;
-                        font-weight: 600;
-                    }
+		ul {
+			display: block;
+			margin: 10px;
 
-                    a {
-                        font-size: 14px;
-                        text-decoration: none;
-                        margin-left: -35px;
-                        margin-bottom: 5px;
-                    }
-                }
+			li {
+				width: 100px;
+				padding: 10px;
+				text-align: left;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 
-            }
-        }
-    }
-
-    
-
-    .nav-icons ul li:hover .dropdown {
-        display: block;
-        position: absolute;
-        background-color: $primary-color;
-        margin-left: -63px;
-        margin-top: 2px;
-
-        ul {
-            display: block;
-            margin: 10px;
-
-            li {
-                width: 100px;
-                padding: 10px;
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                a:hover{
-                    text-decoration: underline;
-                    color: $secondary-color;
-                }
-            }
-        }
-    }
-
-} 
-
-
-
-
-
-
+				a:hover {
+					text-decoration: underline;
+					color: $secondary-color;
+				}
+			}
+		}
+	}
+}

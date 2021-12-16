@@ -27,8 +27,10 @@ async function getProductDate() {
 
         const productImage = "http://localhost:1337" + productInfo.image.url
 
-        currentImg.innerHTML += `<label for="image">Current image</label>
-                                <div class="current-img" style="background-img: ${productImage}></div>`;
+        currentImg.innerHTML += `<div class="current-image">
+                                    <label for="image">Current image</label>
+                                    <div class="current-img" style="background-image: url('${productImage}')";></div>
+                                </div>`;
 
         console.log(productInfo);
 
@@ -92,10 +94,10 @@ async function productEditUpdate(id, title, price, description) {
         const json = await resp.json();
 
         if (json.updated_at) {
-            messageDispaly("success", "The product is Updated", ".message-container");
+            messageDisplay("success", "The product is Updated", ".message-container");
 
         } else {
-            messageDispaly("error", json.message, ".message-container");
+            messageDisplay("error", json.message, ".message-container");
         }
 
     } catch (error) {
