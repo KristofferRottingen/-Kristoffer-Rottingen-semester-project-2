@@ -71,12 +71,11 @@ function formSubmit(event) {
 async function productEditUpdate(id, title, price, description, image) {
 
 
-    if (image){
-        const formData = new FormData();
+    const formData = new FormData();
+    if (image){        
         formData.append("files.image", image, image.name);
     }
     
-    const formData = new FormData();
     const data = JSON.stringify({ id: id, title: title, price: price, description: description, });
     formData.append("data", data);
 
