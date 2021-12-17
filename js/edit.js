@@ -38,6 +38,8 @@ async function getProductDate() {
         title.value = productInfo.title;
         price.value = productInfo.price;
         description.value = productInfo.description;
+        
+        // i have to get the image into the input. This one is not working -->
         imageFile.value = productInfo.image.url;
 
 
@@ -70,6 +72,8 @@ function formSubmit(event) {
 
 
 async function productEditUpdate(id, title, price, description, image) {
+
+    // image ends up undefined if the admin does not change the image, which leads to the code not running --->
 
     const formData = new FormData();
     formData.append("files.image", image, image.name)
