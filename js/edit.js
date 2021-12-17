@@ -27,7 +27,7 @@ async function getProductDate() {
 
         const productImage = "http://localhost:1337" + productInfo.image.url
 
-        currentImg.innerHTML += `<div class="current-image">
+        currentImg.innerHTML = `<div class="current-image">
                                     <label for="image">Current image</label>
                                     <div class="current-img" style="background-image: url('${productImage}')";></div>
                                 </div>`;
@@ -38,8 +38,7 @@ async function getProductDate() {
         title.value = productInfo.title;
         price.value = productInfo.price;
         description.value = productInfo.description;
-        // missing img property 
-
+        imageFile.value = productInfo.image.url;
 
 
     } catch (error) {
@@ -63,16 +62,20 @@ function formSubmit(event) {
     const imageValue = imageFile.files[0];
 
     if (idValue.length === 0 || titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
-        return messageDispaly("warning", " Please insert right values", ".message-container");
+        return messageDisplay("warning", " Please insert right values", ".message-container");
     }
 
     productEditUpdate(idValue, titleValue, priceValue, descriptionValue, imageValue);
 }
 
 
-async function productEditUpdate(id, title, price, description) {
+async function productEditUpdate(id, title, price, description, image) {
 
+    const formData = new FormData();
+    formData.append("files.image", image, image.name)
     const data = JSON.stringify({ id: id, title: title, price: price, description: description, });
+    formData.append("data", data);
+    
 
     const keyToToken = "token";
 
@@ -83,18 +86,19 @@ async function productEditUpdate(id, title, price, description) {
 
     const optionsMethod = {
         method: "PUT",
-        body: data,
+        body: formData,
         headers: {
             Authorization: `Bearer ${fixedToken}`,
         },
     };
 
     try {
-        const resp = await fetch(productsApi, optionsMethod);
+        const resp = await fetch(urlEdit, optionsMethod);
         const json = await resp.json();
 
         if (json.updated_at) {
             messageDisplay("success", "The product is Updated", ".message-container");
+            getProductDate();
 
         } else {
             messageDisplay("error", json.message, ".message-container");

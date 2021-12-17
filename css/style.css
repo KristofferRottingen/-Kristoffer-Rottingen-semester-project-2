@@ -40,6 +40,10 @@ body {
   cursor: pointer;
 }
 
+.nav .none {
+  display: none;
+}
+
 .nav .nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
