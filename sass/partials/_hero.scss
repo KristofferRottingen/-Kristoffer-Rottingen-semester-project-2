@@ -1,52 +1,76 @@
-.hero-section{
-    min-height: 60vh;
-    height: 100%;
-    width: auto;
-    padding: 0;
-    justify-content: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.hero-section {
+	min-height: 60vh;
+	height: 100%;
+	width: auto;
+	padding: 0;
+	justify-content: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 
-    .hero-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 30px;
-        background-color: $herobg-color;
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 30px;
+		background-color: $herobg-color;
 
-        img{
-            max-width: 250px;
-        }
-    
-        h1{
-            color: $secondary-color;
-            text-shadow: 0px 3px 6px black;
-        }
+		img {
+			max-width: 250px;
+		}
 
-        button{
-            padding: 10px 25px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: $third-color;
-            color: $secondary-color;
-            transition: all 0.3 ease;
-            cursor: pointer;
-        }
+		h1 {
+			color: $secondary-color;
+			text-shadow: 0px 3px 6px black;
+		}
 
-        button:hover{
-            box-shadow: 0px 3px 6px black;
-            transition: all 0.3 ease;
-            background-color: $secondary-color;
-            color: $third-color;
-        }
-    }
+		button {
+			padding: 10px 25px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			background-color: $third-color;
+			color: $secondary-color;
+			transition: all 0.3 ease;
+			cursor: pointer;
+		}
 
-    
+		button:hover {
+			box-shadow: 0px 3px 6px black;
+			transition: all 0.3 ease;
+			background-color: $secondary-color;
+			color: $third-color;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.hero-section {
+		min-height: 40vh;
+	}
+}
+
+@media (max-width: 650px) {
+	.hero-section .hero-content {
+		padding: 10px;
+
+		img {
+			max-width: 150px;
+		}
+
+		h1 {
+			font-size: 23px;
+			text-align: center;
+		}
+
+		button {
+			padding: 5px 15px;
+			font-size: 16px;
+		}
+	}
 }

@@ -19,26 +19,28 @@
             <div class="logo">
                 <a href="index.html"><img src="images/semester-p2-logo-ligende.png" alt="Logo"></a>
             </div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About us</a></li>
-                </ul>
-            </div>
-            <div class="nav-icons">
-                <ul>
-                    <li><i class="fas fa-user-circle"></i>
-                        <div class="dropdown">
-                            <ul>
-                                <li>
-                                    <a href="login.html">Log in</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="cart.html"><i class="fas fa-shopping-cart">1</i></a></li>
-                </ul>
+            <button class="hamburger-label"><i class="fas fa-bars"></i></button>
+            <div id="nav-container" class="nav-container">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="nav-icons">
+                    <ul>
+                        <li><i class="fas fa-user-circle"></i>
+                            <div class="dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="login.html">Log in</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -70,6 +72,7 @@
     <script src="js/cart.js" type="module"></script>
     <script src="js/components/subTotal.js" type="module"></script>
     <script src="js/components/itemsInCart.js" type="module"></script>
+    <script src="js/components/hamburgerMenu.js" type="module"></script>
 </body>
 
 </html>

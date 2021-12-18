@@ -5,6 +5,7 @@
 	padding: 5px 5px 0 5px;
 	box-sizing: border-box;
 	align-items: center;
+	flex-wrap: wrap;
 
 	// Loog --->
 	.logo {
@@ -19,6 +20,8 @@
 	.hamburger-label {
 		float: right;
 		color: $secondary-color;
+		background-color: transparent;
+		border: none;
 		padding: 10px;
 		font-size: 1.5rem;
 		display: none;
@@ -33,7 +36,7 @@
 				list-style: none;
 				width: 300px;
 				padding: 0;
-				justify-content: space-between;
+				justify-content: space-around;
 				padding-top: 19px;
 
 				a {
@@ -61,12 +64,57 @@
 		// Icons ---->
 		.nav-icons {
 			ul {
-				list-style: none;
 				display: inline-flex;
 				width: 100px;
 				padding-right: 19px;
 				padding-top: 13px;
 				justify-content: space-evenly;
+
+				li {
+					list-style: none;
+					.dropdown {
+						display: none;
+						width: 175px;
+						position: absolute;
+						background-color: $primary-color;
+						margin-left: -63px;
+						margin-top: 2px;
+
+						ul {
+							display: block;
+							margin: 10px;
+							li {
+								width: 100px;
+								padding: 10px;
+								text-align: left;
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								p {
+									font-size: 16px;
+									color: $secondary-color;
+									text-align: center;
+									margin-left: -35px;
+									margin-bottom: 5px;
+									font-weight: 600;
+								}
+
+								a {
+									font-size: 14px;
+									text-decoration: none;
+									margin-left: -35px;
+									margin-bottom: 5px;
+								}
+
+								a:hover {
+									text-decoration: underline;
+									color: $secondary-color;
+								}
+							}
+						}
+					}
+				}
 
 				li {
 					a {
@@ -81,67 +129,40 @@
 					}
 				}
 			}
-
-			// Log inn dropdown --->
-
-			.dropdown {
-				display: none;
-				width: 175px;
-
-				ul {
-					li {
-						p {
-							font-size: 16px;
-							color: $secondary-color;
-							text-align: center;
-							margin-left: -35px;
-							margin-bottom: 5px;
-							font-weight: 600;
-						}
-
-						a {
-							font-size: 14px;
-							text-decoration: none;
-							margin-left: -35px;
-							margin-bottom: 5px;
-						}
-					}
-				}
-			}
 		}
 
 		.nav-icons ul li:hover .dropdown {
 			display: block;
-			position: absolute;
-			background-color: $primary-color;
-			margin-left: -63px;
-			margin-top: 2px;
-
-			ul {
-				display: block;
-				margin: 10px;
-
-				li {
-					width: 100px;
-					padding: 10px;
-					text-align: left;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-
-					a:hover {
-						text-decoration: underline;
-						color: $secondary-color;
-					}
-				}
-			}
 		}
 	}
 
-	@media (max-width: 750px) {
+	@media (max-width: 760px) {
 		.nav-container {
 			display: none;
+			width: 100%;
+			flex-direction: column;
+			margin-left: 20px;
+		}
+
+		.nav-icons ul li .dropdown ul li {
+			margin-bottom: 29px;
+		}
+
+		.nav-icons ul,
+		.nav-links ul {
+			display: flex;
+			flex-direction: column;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.nav-icons ul li:hover .dropdown {
+			padding: 0;
+			margin: 0;
+		}
+
+		.show {
+			display: flex;
 		}
 
 		.hamburger-label {

@@ -1,39 +1,42 @@
 import { getExistingProduct } from "./cartFunctions.js";
 
 export function toggleProduct() {
-    const detailsButton = document.querySelector(".atc-button");
+    const detailsButton = document.querySelectorAll(".atc-button");
 
-    detailsButton.addEventListener("click", handleClick);
+    for (let i = 0; i < detailsButton.length; i++) {
+        const button = detailsButton[i];
 
-    function handleClick() {
+        button.addEventListener("click", handleClick);
 
-        const id = this.dataset.id;
-        const title = this.dataset.title;
-        const price = this.dataset.price;
-        const image = this.dataset.image;
+        function handleClick() {
 
-        const currentCart = getExistingProduct();
+            const id = this.dataset.id;
+            const title = this.dataset.title;
+            const price = this.dataset.price;
+            const image = this.dataset.image;
 
-        const existingProduct = currentCart.find(function (prod) {
-            return prod.id === id;
-        });
+            const currentCart = getExistingProduct();
 
-        if(existingProduct === undefined){
-            const product = { id: id, title: title, price: price, image: image };
+            const existingProduct = currentCart.find(function (prod) {
+                return prod.id === id;
+            });
 
-            currentCart.push(product);
+            if(existingProduct === undefined){
+                const product = { id: id, title: title, price: price, image: image };
+
+                currentCart.push(product);
+            
+                saveToStorage(currentCart);
+            } else{
+                const newProd = currentCart.filter((prod) => prod.id !== id);
+                saveToStorage(newProd);
+            }
+
+            location.href = "cart.html";
+
         
-            saveToStorage(currentCart);
-        } else{
-            const newProd = currentCart.filter((prod) => prod.id !== id);
-            saveToStorage(newProd);
         }
-
-        location.href = "cart.html";
-
-        
     }
-
 
     function saveToStorage(product) {
         localStorage.setItem("cart", JSON.stringify(product));

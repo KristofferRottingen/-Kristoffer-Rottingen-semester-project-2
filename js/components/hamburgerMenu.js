@@ -5,5 +5,5 @@ const nav = document.querySelector(".nav-container");
 hamburgerMenu.addEventListener("click", toggleMenu);
 
 function toggleMenu() {
-    nav.style.display = "flex";
+    nav.classList.toggle("show");
 };

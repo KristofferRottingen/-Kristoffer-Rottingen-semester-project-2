@@ -120,3 +120,38 @@
 		}
 	}
 }
+
+@media (max-width: 650px) {
+	.product-content {
+		h2 {
+			font-size: 20px;
+		}
+
+		.row {
+			.card {
+				width: 250px;
+
+				.card-image {
+					width: 250px;
+				}
+
+				.product-text {
+					.product-icon a {
+						font-size: 18px;
+					}
+
+					h3 {
+						font-size: 18px;
+					}
+
+					a {
+						button {
+							padding: 5px 15px;
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

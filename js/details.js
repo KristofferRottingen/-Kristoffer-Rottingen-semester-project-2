@@ -15,7 +15,6 @@ const id = params.get("id");
 const urlEdit = productsApi + "/" + id;
 
 
-
 async function getDetails() {
     
     try {
