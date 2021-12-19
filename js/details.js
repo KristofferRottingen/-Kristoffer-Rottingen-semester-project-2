@@ -23,8 +23,6 @@ async function getDetails() {
 
         const image = "http://localhost:1337" + json.image.url;
 
-        console.log(json);
-
         detailImage.innerHTML += `<img class="details-image" src="${image}" alt="detail image">`;
 
         infoSection.innerHTML += `<div class="info-content">

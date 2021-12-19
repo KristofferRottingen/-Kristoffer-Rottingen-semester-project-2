@@ -20,7 +20,6 @@ function formSubmit(event) {
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const imageValue = imageFile.files[0];
-    console.log(imageValue);
 
     if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
         return messageDispaly("warning", " Please insert right values", ".message-container");
@@ -63,8 +62,6 @@ async function productsAdd(title, price, description, image) {
         } else {
             messageDispaly("error", json.message, ".message-container");
         }
-
-        console.log(json);
 
     } catch (error) {
         console.log(error);

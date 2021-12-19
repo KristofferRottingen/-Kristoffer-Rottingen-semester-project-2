@@ -93,4 +93,20 @@
 			}
 		}
 	}
+
+	@media (max-width: 450px) {
+		.edit-form {
+			padding: 30px 15px;
+
+			.edit-content {
+				max-width: 275px;
+
+				.current-img-div {
+					.current-img {
+						width: 275px;
+					}
+				}
+			}
+		}
+	}
 }

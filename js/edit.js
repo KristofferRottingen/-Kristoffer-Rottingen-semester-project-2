@@ -8,8 +8,6 @@ const id = params.get("id");
 
 const urlEdit = productsApi + "/" + id;
 
-console.log(urlEdit);
-
 const form = document.querySelector(".edit-form");
 const message = document.querySelector(".message-container");
 const idInput = document.querySelector("#id");
@@ -32,7 +30,6 @@ async function getProductDate() {
                                     <div class="current-img" style="background-image: url('${productImage}')";></div>
                                 </div>`;
 
-        console.log(productInfo);
 
         idInput.value = productInfo.id;
         title.value = productInfo.title;

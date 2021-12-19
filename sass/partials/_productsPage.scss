@@ -6,3 +6,13 @@
 .line {
 	margin-bottom: 20px;
 }
+
+@media (max-width: 650px) {
+	h1 {
+		font-size: 25px;
+	}
+
+	.search {
+		padding: 5px;
+	}
+}

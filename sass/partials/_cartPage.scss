@@ -84,4 +84,52 @@
 		max-width: 1500px;
 		margin: 0 auto;
 	}
+
+	@media (max-width: 760px) {
+		.cart-container {
+			padding: 20px;
+		}
+
+		.cart-headings {
+			h2 {
+				font-size: 20px;
+			}
+		}
+
+		.cart-info {
+			padding-right: 0;
+
+			a {
+				img {
+					max-width: 100px;
+				}
+
+				p {
+					font-size: 14px;
+				}
+			}
+
+			p {
+				font-size: 14px;
+			}
+
+			button {
+				i {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 530px) {
+		.cart-headings {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 760px) {
+	.cart-container {
+		padding: 20px;
+	}
 }

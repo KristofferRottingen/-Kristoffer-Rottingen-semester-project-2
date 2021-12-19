@@ -48,8 +48,6 @@ async function login(username, password) {
 
         const json = await resp.json();
 
-        console.log(json);
-
         if (json.user) {
 
             saveToken(json.jwt);

@@ -31,8 +31,6 @@ getHeroImage();
 
 const username = getUsername();
 
-console.log(username);
-
 async function getproducts() {
 
 
@@ -41,9 +39,6 @@ async function getproducts() {
         const rep = await fetch(productsApi);
 
         const data = await rep.json();
-
-        console.log(data);
-
 
         for (let i = 0; i < data.length; i++) {
 

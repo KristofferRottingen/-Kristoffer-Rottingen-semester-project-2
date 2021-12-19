@@ -74,4 +74,62 @@
 			}
 		}
 	}
+
+	@media (max-width: 1050px) {
+		.details-content {
+			flex-direction: column;
+
+			.info-section {
+				.info-content {
+					margin: 0 0 20px 0;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 760px) {
+		.details-content {
+			.info-section {
+				.info-content {
+					h1 {
+						font-size: 25px;
+					}
+
+					p {
+						font-size: 15px;
+					}
+
+					h2 {
+						font-size: 20px;
+					}
+
+					.note {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		.details-content {
+			.image-section {
+				width: 300px;
+				.image {
+					width: 300px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					img {
+						padding: 0;
+						max-width: 300px;
+					}
+				}
+			}
+
+			.info-section {
+				max-width: 300px;
+			}
+		}
+	}
 }
