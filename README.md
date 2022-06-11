@@ -18,15 +18,7 @@ This project is built with:
 
 ## Getting Started
 
-### Installing
-
-1. Clone the repo.
-
-2. Install the dependencies:
-
-```
-npm install
-```
+Link: https://rottingen-semseter-2.netlify.app 
 
 ### Running
 
