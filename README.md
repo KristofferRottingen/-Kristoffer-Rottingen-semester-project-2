@@ -20,15 +20,6 @@ This project is built with:
 
 Link: https://rottingen-semseter-2.netlify.app 
 
-### Running
-
-To run the app, run the following commands:
-
-```bash
-npm run start
-```
-
-
 ## Contact
 
 [My LinkedIn page](https://www.linkedin.com/in/kristoffer-røttingen-3a2467229/)
